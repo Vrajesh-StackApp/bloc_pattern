@@ -59,9 +59,7 @@ class _HomePageState extends State<HomePage> {
           debugPrint("state ==> $state");
 
           if (state is PicsumEmpty) {
-            return const Center(
-              child: Text("Loading..."),
-            );
+            return emptyPicsum(context);
           } else if (state is PicsumLoading) {
             return const Center(
               child: CircularProgressIndicator(),
@@ -134,4 +132,10 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  emptyPicsum(BuildContext context) {
+    BlocProvider.of<PicsumBloc>(context)
+        .add(const FetchPicsum(pages: 1, limit: 100));
+  }
+
 }

@@ -9,7 +9,7 @@ class FetchPicsum extends PicsumEvents{
   final int? pages;
   final int? limit;
 
-  const FetchPicsum(this.pages, this.limit):assert(pages != null,limit != null);
+  const FetchPicsum({this.pages, this.limit}):assert(pages != null,limit != null);
 
   @override
   List<Object?> get props => [pages,limit];
