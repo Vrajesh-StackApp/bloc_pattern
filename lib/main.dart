@@ -32,10 +32,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: BlocProvider(create: (context) => PicsumBloc(picsumRepository),child: const HomePage(),),
-      initialRoute: AppString.homePage,
-      routes: {
-        AppString.homePage : (context) => const HomePage(),
-      },
+      // initialRoute: AppString.homePage,
+      // routes: {
+      //   AppString.homePage : (context) => const HomePage(),
+      // },
     );
   }
 }
